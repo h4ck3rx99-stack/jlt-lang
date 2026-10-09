@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jlt-lang"
+version = "1.0.0"
+description = "Just Like That (.jlt) - A programming language for Bangalorean English"
+authors = [{ name = "Namma Bengaluru Developer" }]
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["bangalore", "language", "interpreter", "esolang", "jlt", "kanglish"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+jlt = "jlt.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["jlt*"]

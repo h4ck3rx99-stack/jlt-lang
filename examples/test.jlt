@@ -1,0 +1,6 @@
+tell_ra_macha("How are you da?")
+let_us_say age = 18
+
+suppose(age same_to_same 18) {
+    tell_ra_macha("Go smoke");
+}

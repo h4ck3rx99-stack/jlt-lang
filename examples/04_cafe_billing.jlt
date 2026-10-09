@@ -1,0 +1,35 @@
+// ============================================================================
+// 04_cafe_billing.jlt - Functions with 'do_one_thing' and 'give_back'
+// ============================================================================
+
+tell_ra_macha("=== CTR / Bangalore Tiffin Room Billing System ===");
+
+// Function definition
+do_one_thing calculate_breakfast_bill(benne_dosa_count, filter_coffee_count, extra_vada) {
+    let_us_say dosa_rate = 75;
+    let_us_say coffee_rate = 25;
+    let_us_say vada_rate = 30;
+
+    let_us_say total = (benne_dosa_count * dosa_rate) + (filter_coffee_count * coffee_rate);
+
+    suppose (extra_vada same_to_same pakka) {
+        total = total + vada_rate;
+        tell_ra_macha("Crispy Medu Vada added with dip sambar!");
+    }
+
+    // Apply Bangalore Techie discount if bill is solid
+    suppose (total >= 200) {
+        let_us_say discount = 20;
+        tell_ra_macha("Techie special discount applied: Rs. " + str(discount));
+        total = total - discount;
+    }
+
+    give_back total;
+}
+
+// Function call
+let_us_say table_1_bill = calculate_breakfast_bill(2, 3, pakka);
+tell_ra_macha("Table 1 Total: Rs. " + str(table_1_bill));
+
+let_us_say table_2_bill = calculate_breakfast_bill(1, 1, bogus);
+tell_ra_macha("Table 2 Total: Rs. " + str(table_2_bill));

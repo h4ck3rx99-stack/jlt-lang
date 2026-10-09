@@ -1,0 +1,30 @@
+// ============================================================================
+// 02_silk_board_traffic.jlt - Conditionals in Bangalore English
+// ============================================================================
+
+tell_ra_macha("=== Checking Bengaluru Traffic Scene ===");
+
+let_us_say traffic_index = 85;
+let_us_say raining = pakka;
+let_us_say has_metro_pass = pakka;
+
+tell_ra_macha("Current Traffic Index: " + str(traffic_index));
+tell_ra_macha("Is it raining in HSR Layout?: " + str(raining));
+
+// suppose, or_suppose, otherwise
+suppose (traffic_index more_than 80 and_also raining same_to_same pakka) {
+    tell_ra_macha("🚨 Ayyo Rama! Silk Board is jammed solid! Take Purple/Yellow Line Metro only!");
+} or_suppose (traffic_index more_than 50) {
+    tell_ra_macha("⚠️ Traffic moving like BMTC 500D bus at peak hours. Take inner ring road da!");
+} or_suppose (traffic_index less_than 30) {
+    tell_ra_macha("🏎️ NICE Road is totally khali! Zoom smoothly boss!");
+} otherwise {
+    tell_ra_macha("👍 Normal traffic only, swalpa adjust maadi drive!");
+}
+
+// Checking boolean expressions
+let_us_say auto_driver_accepted = bogus;
+
+suppose (auto_driver_accepted same_to_same bogus) {
+    tell_ra_macha("Auto driver said: 'No go Koramangala boss, meter double!'");
+}

@@ -1,0 +1,49 @@
+// ============================================================================
+// 06_bengaluru_techie_day.jlt - A Day in the Life of a Bangalore Techie
+// ============================================================================
+
+tell_ra_macha("🌆 A Day in Namma Bengaluru - Startup Edition");
+tell_ra_macha(bengaluru_weather());
+tell_ra_macha(filter_coffee_boost());
+
+// Techie profile as a dictionary
+let_us_say techie = {
+    "name": "Arjun",
+    "role": "Full Stack Lead",
+    "company": "Koramangala Unicorn",
+    "favourite_area": "Indiranagar",
+    "coffee_cups": 0
+};
+
+tell_ra_macha("\n1. Morning Standup:");
+tell_ra_macha("Engineer: " + techie.name + " (" + techie.role + " at " + techie.company + ")");
+
+// Coffee boost function
+do_one_thing drink_coffee(person) {
+    person.coffee_cups += 1;
+    tell_ra_macha("☕ Drinking coffee cup #" + str(person.coffee_cups) + "! Energy at 100%!");
+}
+
+drink_coffee(techie);
+drink_coffee(techie);
+
+// Calculate commute
+tell_ra_macha("\n2. Evening Commute Fare Calculation:");
+let_us_say commute_kms = 8.5;
+let_us_say day_fare = auto_fare(commute_kms, bogus);
+let_us_say night_fare = auto_fare(commute_kms, pakka);
+
+tell_ra_macha("Distance: " + str(commute_kms) + " km");
+tell_ra_macha("Day Auto Meter: Rs. " + str(day_fare));
+tell_ra_macha("Night Auto Meter (1.5x): Rs. " + str(night_fare));
+
+// Weekend spots to explore
+let_us_say weekend_places = ["Cubbon Park", "Nandi Hills", "Sarjapur Brewery"];
+push(weekend_places, "Toit Indiranagar");
+
+tell_ra_macha("\n3. Weekend Plans Checklist (" + str(len(weekend_places)) + " spots):");
+for_each place in weekend_places {
+    tell_ra_macha("✨ Plan: Visit " + place);
+}
+
+tell_ra_macha("\n🎉 That's how Bangalore runs, just like that (.jlt)!");

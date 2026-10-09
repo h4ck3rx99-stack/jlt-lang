@@ -1,0 +1,22 @@
+// ============================================================================
+// 01_hello_world.jlt - Welcome to Namma Bengaluru!
+// ============================================================================
+
+tell_ra_macha("Namaskara Bengaluru! Welcome to JLT (.jlt) programming language!");
+tell_da("Swalpa adjust maadi, code runs just like that!");
+
+// Declaring variables in Bangalore English style
+let_us_say developer_name = "Techie Macha";
+macha experience_years = 5;
+boss current_location = "Koramangala 4th Block";
+put favourite_food = "Masala Dosa + Filter Coffee";
+
+// Fixed / Constant declarations
+pakka office_city = "Bengaluru";
+fixed_boss pincode = 560034;
+
+tell_ra_macha("Developer Profile:");
+tell_ra_macha("Name: " + developer_name);
+tell_ra_macha("Experience: " + str(experience_years) + " years");
+tell_ra_macha("Location: " + current_location + " (" + office_city + " - " + str(pincode) + ")");
+tell_ra_macha("Fuel: " + favourite_food);

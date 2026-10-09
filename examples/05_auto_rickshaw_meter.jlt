@@ -1,0 +1,26 @@
+// ============================================================================
+// 05_auto_rickshaw_meter.jlt - Error Handling in Bangalore English
+// ============================================================================
+
+tell_ra_macha("=== Testing Bangalore Auto Rickshaw Meter Calculations ===");
+
+do_one_thing calculate_per_person_fare(total_fare, number_of_friends) {
+    adjust_and_try {
+        tell_ra_macha("Splitting Rs. " + str(total_fare) + " among " + str(number_of_friends) + " techies...");
+        let_us_say per_head = total_fare / number_of_friends;
+        tell_ra_macha("Each person pays: Rs. " + str(per_head));
+        give_back per_head;
+    } what_ra_error (err) {
+        tell_ra_macha("Ayyo! Calculation crashed da: " + err);
+        tell_ra_macha("Auto driver said: 'No zero passengers allowed boss!'");
+        give_back total_fare;
+    } in_the_end {
+        tell_ra_macha("Paid via UPI / QR code scan. Transaction complete!\n");
+    }
+}
+
+// Normal case
+let_us_say trip1 = calculate_per_person_fare(150, 3);
+
+// Division by zero error handled gracefully
+let_us_say trip2 = calculate_per_person_fare(200, 0);

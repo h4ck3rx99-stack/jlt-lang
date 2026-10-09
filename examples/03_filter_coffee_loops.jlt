@@ -1,0 +1,44 @@
+// ============================================================================
+// 03_filter_coffee_loops.jlt - Loops in Bangalore English
+// ============================================================================
+
+tell_ra_macha("=== 1. While Loop with 'as_long_as' ===");
+
+let_us_say caffeine_level = 20;
+
+as_long_as (caffeine_level < 80) {
+    tell_ra_macha("Sipping Filter Coffee at Vidyarthi Bhavan... Caffeine: " + str(caffeine_level) + "%");
+    caffeine_level += 20;
+}
+
+tell_ra_macha("Now fully energized: " + str(caffeine_level) + "%!\n");
+
+
+tell_ra_macha("=== 2. Range Loop with 'count_from' ===");
+
+count_from token_number = 1 to 4 {
+    tell_ra_macha("Token #" + str(token_number) + ": Dosa parcel ready at counter!");
+}
+
+tell_ra_macha("\n=== 3. For-Each Loop with 'for_each' ===");
+
+let_us_say famous_hangouts = [
+    "CTR Malleshwaram",
+    "Brahmin's Coffee Bar",
+    "Corner House Ice Cream",
+    "Church Street Blossoms"
+];
+
+for_each spot in famous_hangouts {
+    tell_ra_macha("📍 Visiting spot: " + spot);
+}
+
+tell_ra_macha("\n=== 4. Loop with break ('pack_up_macha') ===");
+
+count_from attempts = 1 to 10 {
+    suppose (attempts same_to_same 3) {
+        tell_ra_macha("Auto found at attempt " + str(attempts) + "! Pack up macha!");
+        pack_up_macha;
+    }
+    tell_ra_macha("Searching auto attempt: " + str(attempts));
+}
